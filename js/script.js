@@ -2,7 +2,18 @@ $(document).ready(function () {
   fetchCSV()
 });
 
+// var airports = []
+// $(".cls-7").each(function (num, val) {
+//   var a = {
+//     id: $(val).attr("id"),
+//     name: $(val).attr("data-name"),
+//     logo: "img/air2.jpg"
+//   }
+//   // console.log($(val).attr("data-name"))
 
+//   airports.push(a)
+// })
+// console.log(JSON.stringify(airports))
 
 $(".cls-1").hover(function (e) {
 
@@ -10,7 +21,7 @@ $(".cls-1").hover(function (e) {
   $(this).addClass("active-color")
 
   var id = $(this).attr("id")
-  console.log(slideIndex[id])
+  // console.log(slideIndex[id])
   if (slideIndex[id] != undefined) {
     mySwiper.slideTo(slideIndex[id])
   }
@@ -45,7 +56,6 @@ $(".cls-1").hover(function (e) {
 });
 
 $(".cls-1").hover(function () {
-
   // adding radar waves
 
   var p = $(this).parent();
@@ -114,7 +124,7 @@ function fetchCSV() {
     method: 'get',
     success: function (data) {
       var d = csvJSON(data)
-      // console.log(d)
+      console.log(d)
       var d2 = {}
       $.each(d, function (n, v) {
         d2[v.id] = v
@@ -160,10 +170,11 @@ function addSlides(MapData) {
 
 
 
-      var slide = '<div class="swiper-slide h-100"><div class="v-center px-3 mr-md-3">'
+      var slide = '<div class="swiper-slide d-flex"><div class="align-self-center v-center  mt-0 px-3 mr-md-3 pr-5">'
       $(i).each(function (num, val) {
 
         var id2 = $(val).attr("id").replace(".", "")
+
         // console.log(id2)
 
         slide += '              <div class="mb-3">  <img src="' + MapData[id2]["logo"] + '" class="airline-logo mb-5" alt="" />  <h3 class="animated slideInUp"><b>' + MapData[id2].name + '</b></h3>'

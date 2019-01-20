@@ -266,7 +266,7 @@ display: inline-block;
 }
 
 .map-section{
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* max-width:98vw; */
   overflow-x: hidden;
   transition: all 0.5s;
@@ -286,7 +286,7 @@ display: inline-block;
 }
 
 .v-h{
- min-height: 100vh;
+ /* min-height: 100vh; */
 
 }
 
@@ -300,8 +300,8 @@ display: inline-block;
 
 
 .v-center{
-  margin-top:50vh;
-  transform: translateY(-50%);
+  /* margin-top:50vh; */
+  /* transform: translateY(-50%); */
   max-height: 80vh;
   overflow-y:scroll 
 }
